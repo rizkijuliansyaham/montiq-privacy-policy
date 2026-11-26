@@ -91,7 +91,7 @@
         <li>Aplikasi tidak memerlukan akun atau login.</li>
         <li>Kami tidak meminta nama, email, nomor telepon, alamat, foto, maupun identitas pribadi lainnya.</li>
         <li>Iklan dari pihak ketiga (<strong>Google AdMob</strong>) dikonfigurasi dalam <strong>mode ramah anak (<em>child-directed</em>)</strong> dengan rating konten <strong>G</strong> tanpa personalisasi iklan berbasis minat (lihat bagian 5 &amp; 9).</li>
-        <li>Area Pengaturan, batas waktu bermain, tautan eksternal, dan opsi Bebas Iklan dilindungi oleh <strong>Gerbang Orang Tua (<em>Parental Gate</em>)</strong>.</li>
+        <li>Area Pengaturan, batas waktu bermain, tautan eksternal, dan buka kunci akses permainan dilindungi oleh <strong>Gerbang Orang Tua (<em>Parental Gate</em>)</strong>.</li>
         <li>Kami tidak menjual data pengguna dalam bentuk apa pun.</li>
       </ul>
 
@@ -102,7 +102,7 @@
         <li>Pilihan bahasa dan tema tampilan (terang/gelap/sistem).</li>
         <li>Usia anak (opsional) dan filter rekomendasi aktivitas — hanya digunakan secara lokal untuk menampilkan aktivitas yang sesuai usia dan <strong>tidak pernah dikirim</strong> ke server kami.</li>
         <li>Pengaturan batas waktu bermain (<em>Play Time Limit</em>) dan durasi sesi berjalan agar batas waktu tetap terjaga meski Aplikasi ditutup.</li>
-        <li>Status sementara Bebas Iklan, pengatur jeda frekuensi iklan, status permintaan ulasan, cache promo internal aplikasi devQ, serta pengenal acak anonim (UUID) per instalasi untuk statistik pembukaan aplikasi.</li>
+        <li>Daftar aktivitas anonim yang sudah dimainkan hari ini (disimpan secara lokal di perangkat, termasuk melalui Google Play Services Block Store tanpa backup cloud, dan direset otomatis setiap hari untuk kuota 1x/permainan/hari), status buka kunci akses sementara, status permintaan ulasan, serta pengenal acak anonim (UUID) per instalasi untuk statistik pembukaan aplikasi.</li>
       </ul>
       <p>Seluruh interaksi anak di dalam aktivitas belajar (seperti goresan jari saat menelusuri huruf di Huruf Amplas, susunan kartu, atau respons sensor kemiringan) hanya diproses secara <em>real-time</em> di layar perangkat dan tidak pernah direkam, disimpan, maupun dikirim ke mana pun. Data lokal akan terhapus seluruhnya saat Aplikasi di-uninstall atau datanya dibersihkan.</p>
       <p><strong>Data teknis yang diproses oleh layanan pihak ketiga.</strong> Layanan pihak ketiga yang digunakan Aplikasi (Google AdMob dan Firebase) dapat memproses informasi teknis perangkat secara terbatas — seperti merek/model perangkat, versi sistem operasi, versi aplikasi, alamat IP, dan event pembukaan aplikasi dengan UUID acak anonim (bukan IMEI atau Android ID persisten) — semata-mata untuk menayangkan iklan ramah anak, menjaga stabilitas, memeriksa pembaruan, dan mencegah penyalahgunaan (lihat bagian 5).</p>
@@ -118,7 +118,7 @@
       <h2>5. Iklan dan Layanan Pihak Ketiga</h2>
       <p>Untuk mendukung pengembangan dan pemeliharaan Aplikasi agar tetap dapat diakses secara gratis, MontiQ menggunakan layanan pihak ketiga yang mematuhi kebijakan keluarga Google Play:</p>
       <ul>
-        <li><strong>Google AdMob (Mode Ramah Anak)</strong> — menayangkan iklan dengan konfigurasi <code>tagForChildDirectedTreatment</code> dan rating konten maksimal <strong>G</strong> (<em>General Audiences</em>). Iklan yang dipersonalisasi (berbasis minat/perilaku) <strong>dinonaktifkan</strong>. MontiQ tidak menampilkan iklan pembuka aplikasi (<em>App Open</em>); iklan layar penuh (<em>interstitial</em>) hanya dapat muncul setelah orang tua keluar dari area Pengaturan, dan opsi tonton video untuk Bebas Iklan sementara hanya tersedia di balik Gerbang Orang Tua. Untuk pengguna di Wilayah Ekonomi Eropa (EEA), Inggris, dan wilayah lain yang mewajibkannya, persetujuan dikelola melalui formulir UMP Google.</li>
+        <li><strong>Google AdMob (Mode Ramah Anak — Hanya Rewarded Video Opsional)</strong> — menayangkan iklan dengan konfigurasi <code>tagForChildDirectedTreatment</code> dan rating konten maksimal <strong>G</strong> (<em>General Audiences</em>). Iklan yang dipersonalisasi (berbasis minat/perilaku) <strong>dinonaktifkan</strong>. MontiQ <strong>tidak</strong> menampilkan iklan pembuka aplikasi (<em>App Open</em>), <em>banner</em>, <em>native</em>, maupun <em>interstitial</em>; satu-satunya iklan adalah video berbonus (<em>Rewarded Video</em>) opsional yang hanya dapat dipicu oleh orang tua di balik Gerbang Orang Tua untuk membuka akses penuh semua permainan sesuai batas waktu bermain. Untuk pengguna di Wilayah Ekonomi Eropa (EEA), Inggris, dan wilayah lain yang mewajibkannya, persetujuan dikelola melalui formulir UMP Google.</li>
         <li><strong>Firebase Analytics</strong> — mencatat event pembukaan aplikasi (<code>open_monti_q</code>) beserta informasi teknis umum perangkat (merek, model, OS, versi aplikasi, dan UUID acak anonim per instalasi) untuk statistik anonim dan peningkatan kualitas Aplikasi.</li>
         <li><strong>Firebase Remote Config &amp; Cloud Messaging</strong> — memeriksa versi minimum aplikasi guna menjaga kompatibilitas serta mengirimkan notifikasi topik umum terkait pembaruan.</li>
         <li><strong>Google Play In-App Update &amp; In-App Review</strong> — memfasilitasi pembaruan aplikasi serta pemberian rating/ulasan langsung melalui layanan resmi Google Play.</li>
@@ -149,7 +149,7 @@
         <li>Kami tidak dengan sengaja mengumpulkan informasi pribadi yang dapat mengidentifikasi anak (seperti nama, email, foto, rekaman suara, lokasi akurat, atau nomor telepon).</li>
         <li>Pengaturan usia anak bersifat opsional, hanya disimpan secara lokal di perangkat untuk menyaring rekomendasi aktivitas, dan tidak pernah dikirim ke server mana pun.</li>
         <li>Semua permintaan iklan ke Google AdMob ditandai sebagai konten yang ditujukan untuk anak (<em>child-directed</em>) dengan rating konten <strong>G</strong> dan tanpa penargetan iklan berbasis perilaku.</li>
-        <li>Tautan eksternal, halaman Kebijakan Privasi, menu Pengaturan, dan opsi Bebas Iklan dipisahkan dari area bermain anak menggunakan <strong>Gerbang Orang Tua (<em>Parental Gate</em>)</strong>.</li>
+        <li>Tautan eksternal, halaman Kebijakan Privasi, menu Pengaturan, dan opsi buka kunci akses permainan (iklan reward) dipisahkan dari area bermain anak menggunakan <strong>Gerbang Orang Tua (<em>Parental Gate</em>)</strong>.</li>
       </ul>
       <p>Jika kamu adalah orang tua atau wali dan meyakini anakmu telah mengirimkan informasi pribadi kepada kami tanpa persetujuanmu, segera hubungi kami melalui email di bawah ini agar kami dapat menindaklanjutinya dengan cepat.</p>
 
@@ -174,7 +174,7 @@
         <li>The App does not require an account or login.</li>
         <li>We do not ask for your name, email, phone number, address, photos, or other personal identifiers.</li>
         <li>Third-party ads (<strong>Google AdMob</strong>) are configured in <strong>child-directed mode</strong> with a <strong>G</strong> content rating and no personalized/interest-based advertising (see sections 5 &amp; 9).</li>
-        <li>Settings, play time limits, external links, and Ad-Free options are protected behind a <strong>Parental Gate</strong>.</li>
+        <li>Settings, play time limits, external links, and full-access unlock options are protected behind a <strong>Parental Gate</strong>.</li>
         <li>We do not sell user data of any kind.</li>
       </ul>
 
@@ -185,7 +185,7 @@
         <li>Language and display theme preferences (light/dark/system).</li>
         <li>Child's age (optional) and recommended-activity filter — used strictly on-device to highlight age-appropriate activities and <strong>never transmitted</strong> to our servers.</li>
         <li>Play Time Limit settings and current session elapsed time so limits remain enforced even if the App is closed.</li>
-        <li>Temporary Ad-Free status, ad frequency-capping timestamps, in-app review prompt state, cached devQ house-ad info, and a randomly generated anonymous per-install UUID used for app-open statistics.</li>
+        <li>Anonymous daily played activity IDs (stored locally on the device, including via Google Play Services Block Store with cloud backup disabled, and automatically reset each calendar day for the 1x/activity/day free limit), temporary full-access unlock state, in-app review prompt state, and a randomly generated anonymous per-install UUID used for app-open statistics.</li>
       </ul>
       <p>All child interactions within learning activities (such as finger strokes when tracing Sandpaper Letters, card arrangements, or tilt sensor input) are processed purely in real time on the device screen and are never recorded, saved, or transmitted anywhere. Local data is completely removed when you uninstall the App or clear its storage.</p>
       <p><strong>Technical data processed by third-party services.</strong> Third-party SDKs integrated into the App (Google AdMob and Firebase) may process limited technical device information — such as device brand/model, OS version, app version, IP address, and app-open events using a random per-install UUID (never persistent hardware IDs like IMEI or Android ID) — solely to serve child-safe ads, maintain app stability, check for updates, and prevent abuse (see section 5).</p>
@@ -201,7 +201,7 @@
       <h2>5. Ads and Third-Party Services</h2>
       <p>To support ongoing development and keep the App accessible for free, MontiQ uses the following third-party services in compliance with Google Play's Families Policy:</p>
       <ul>
-        <li><strong>Google AdMob (Child-Directed Mode)</strong> — serves ads configured with <code>tagForChildDirectedTreatment</code> and a maximum content rating of <strong>G</strong> (<em>General Audiences</em>). Personalized (interest-based/behavioral) advertising is <strong>disabled</strong>. MontiQ does not show App Open ads; full-screen interstitial ads may only appear when a parent exits Settings, and optional rewarded videos for temporary Ad-Free mode are accessible only behind the Parental Gate. For users in the EEA, UK, and other applicable regions, consent is managed via Google's UMP form.</li>
+        <li><strong>Google AdMob (Child-Directed Mode — Opt-In Rewarded Video Only)</strong> — serves ads configured with <code>tagForChildDirectedTreatment</code> and a maximum content rating of <strong>G</strong> (<em>General Audiences</em>). Personalized (interest-based/behavioral) advertising is <strong>disabled</strong>. MontiQ displays <strong>no</strong> App Open, banner, native, or interstitial ads; the only ad format is optional Rewarded Video initiated solely by a parent behind the Parental Gate to unlock temporary full access linked with a play time limit. For users in the EEA, UK, and other applicable regions, consent is managed via Google's UMP form.</li>
         <li><strong>Firebase Analytics</strong> — logs app-open events (<code>open_monti_q</code>) along with general technical device info (brand, model, OS, app version, and a random anonymous per-install UUID) for aggregate statistics and quality improvements.</li>
         <li><strong>Firebase Remote Config &amp; Cloud Messaging</strong> — checks minimum supported App versions for compatibility and delivers general update topic notifications.</li>
         <li><strong>Google Play In-App Update &amp; In-App Review</strong> — enables seamless App updates and official Google Play ratings/reviews.</li>
@@ -232,7 +232,7 @@
         <li>We do not knowingly collect personally identifiable information from children (such as names, email addresses, photos, voice recordings, precise location, or phone numbers).</li>
         <li>The child's age setting is optional, stored strictly on-device to filter recommended activities, and never sent to any server.</li>
         <li>All Google AdMob ad requests are tagged as child-directed with a <strong>G</strong> content rating and no behavioral ad targeting.</li>
-        <li>External links, the Privacy Policy page, Settings, and Ad-Free options are separated from the child's play area behind a <strong>Parental Gate</strong>.</li>
+        <li>External links, the Privacy Policy page, Settings, and full-access unlock options (rewarded ads) are separated from the child's play area behind a <strong>Parental Gate</strong>.</li>
       </ul>
       <p>If you are a parent or guardian and believe your child has provided personal information to us without your consent, please contact us using the email address below so we can address it promptly.</p>
 
